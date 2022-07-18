@@ -1,0 +1,55 @@
+* {
+  padding: 0;
+  margin: 0;
+  background-color: #A5C9CA;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #A5C9CA;
+}
+
+#clg-name {
+  margin: 11px 0px 7px 0px;
+  margin-left: 22%;
+  position: absolute;
+}
+
+.login-form {
+  /* border:solid 2px; */
+  left: 46%;
+  top: 42%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+.login-form h1 {
+  font-size: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 40px 0;
+  margin-left: 164px;
+}
+
+.login-form p {
+  font-size: 20px;
+  margin: 15px 0;
+}
+
+.login-form input {
+  font-size: 16px;
+  width: 148%;
+  padding: 10px 0 2px 5px;
+  border-width: 0px 0px 2px 0px;
+}
+
+.login-form button {
+  background-color: rgb(54, 55, 64);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0;
+  padding: 10px 15px;
+  width: 151%;
+  border-radius: 5px;
+}
