@@ -1,0 +1,24 @@
+.red{
+    box-sizing: border-box;
+    width: 220px;
+    height: 190px;
+    background-color:#ffffff;
+    position: relative;
+    bottom: 35px;
+    left: 30px;
+    border: 2px solid #d2d2d4;
+    border-radius: 5px;
+    .drop-item{
+        padding: 2px;
+        align-items: center;
+        height: 38px;
+        text-align: center;
+        &:hover{
+            background-color: rgb(228, 226, 226);
+        }
+        margin: 0;
+    }
+    .d-ic{
+        margin-left: 50px;
+    }
+}

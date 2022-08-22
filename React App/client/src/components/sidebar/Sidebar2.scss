@@ -1,0 +1,61 @@
+.side-bar2 {
+    background-color: #363740;
+    border-right: 0.5px solid lightgray;
+    min-height: 100vh;
+    flex: 1;
+
+    .top {
+        font-size: 20px;
+        font-weight: bold;
+        color: aliceblue;
+        text-align: center;
+        margin-top: 20px;
+
+        &:hover {
+            color: #ff6d3e;
+            cursor: pointer;
+        }
+    }
+
+    .icon {
+        display: flex;
+        font-size: 30px;
+        align-items: center;
+        justify-content: center;
+        margin: 50px;
+        color: white;
+
+        &:hover {
+            color: #ff6d3e;
+            cursor: pointer;
+        }
+    }
+
+    .icon1 {
+        display: flex;
+        font-size: 30px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 70px;
+        color: white;
+
+        &:hover {
+            color: #ff6d3e;
+            cursor: pointer;
+        }
+    }
+
+    .bottom-icon {
+        display: flex;
+        font-size: 40px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 350px;
+        color: white;
+
+        &:hover {
+            color: #ff6d3e;
+            cursor: pointer;
+        }
+    }
+}

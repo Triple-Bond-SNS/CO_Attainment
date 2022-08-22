@@ -1,0 +1,37 @@
+.navbar2{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-top: 10px;
+    .wrapper2{
+        width: 100%;
+        padding: 20px;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        .title2{
+            font-size: 20px;
+            font-weight: bolder;
+            align-items: center;
+            display: flex;
+        }
+        .items2{
+            display: flex;
+            align-items: center;
+            margin: 10px;
+            .username2{
+                margin: 10px;
+                font-size: 18px;
+            }
+            .userprofile2{
+                margin: 10px;
+                .avatar2{
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 100%;
+                }
+            }
+        }
+    }
+}

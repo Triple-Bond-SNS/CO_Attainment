@@ -1,0 +1,15 @@
+.box{
+    width: 1060px;
+    margin: 0 auto;
+    height: 50px;
+    justify-content: center;
+    box-sizing: border-box;
+    text-align: center;
+    // position:relative;
+    // left: 800px;
+    .p-bar{
+        background-color: rgb(172, 172, 172);
+        display: hidden;
+    }
+}
+
