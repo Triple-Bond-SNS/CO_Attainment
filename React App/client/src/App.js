@@ -8,18 +8,37 @@ import POs from "./pages/pos/POs";
 import Data from "./pages/data/Data";
 import React from "react";
 import Register from "./pages/register/Register";
+import { useState } from "react";
 function App() {
+  const [user, setLoginUser] = useState({});
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Login />}></Route>
-          <Route path="/land" element={<Land />}></Route>
-          <Route path="/roll-list" element={<Roll />}></Route>
-          <Route path="/cos" element={<COs />}></Route>
-          <Route path="/settings" element={<Settings />}></Route>
-          <Route path="/pos" element={<POs />}></Route>
-          <Route path="/data" element={<Data />}></Route>
+          <Route path="/" element={<Login setLoginUser={setLoginUser}/>}></Route>
+          <Route path="/land"
+            element={ user && user._id? <Land />:<Login setLoginUser={setLoginUser}/>}>
+          </Route>
+          <Route path="/roll-list" 
+          element={user && user._id? <Roll /> :<Login setLoginUser={setLoginUser}/> }>
+
+          </Route>
+          <Route path="/cos" 
+          element={user && user._id? <COs /> :<Login setLoginUser={setLoginUser}/>}>
+
+          </Route>
+          <Route path="/settings" 
+          element={user && user._id? <Settings /> :<Login setLoginUser={setLoginUser}/>}>
+
+          </Route>
+          <Route path="/pos" 
+          element={user && user._id? <POs /> :<Login setLoginUser={setLoginUser}/>}>
+
+          </Route>
+          <Route path="/data" 
+          element={user && user._id? <Data /> :<Login setLoginUser={setLoginUser}/>}>
+
+          </Route>
           <Route path="/register" element={<Register />}></Route>
         </Routes>
       </BrowserRouter>
