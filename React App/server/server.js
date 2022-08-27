@@ -3,19 +3,22 @@ const app = express();
 const path = require('path');
 const cors = require('cors');
 const multer = require('multer');
+const mongoose = require('mongoose');
 const port = 2710;
 const XLSX = require("xlsx");
 var fs = require('fs');
 var sourceDir = "uploads"
 app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded());
 
+//EXCEL FILE WORK
 const storage = multer.diskStorage({
   destination: path.join(__dirname, '../server/', 'uploads'),
   filename: function (req, file, cb) {
-    cb(null,file.originalname)
+    cb(null, file.originalname)
   }
 })
-
 app.post('/uploads', async (req, res) => {
   try {
     let upload = multer({ storage: storage }).single('file');
@@ -34,7 +37,6 @@ app.post('/uploads', async (req, res) => {
     });
   } catch (err) { console.log(err) }
 })
-
 
 function readFileToJson(f_name) {
   var WB = XLSX.readFile(f_name);
@@ -70,24 +72,23 @@ files.forEach(function (file) {
     XLSX.utils.book_append_sheet(newWB, newWS, "newData");
     XLSX.writeFile(newWB, "columnResultData.xlsx");     //transposing result data
 
-    var TotalData = columnWiseData.map(function(record){
+    var TotalData = columnWiseData.map(function (record) {
       record[4] = (record[1] + record[2] + record[3]);
       return record;
     })
-    
-    TotalData[0][4]="Total";
-    var PercentData = TotalData.map(function(record){
-       record[5] = (record[4]/30)*100;
-       return record;
+
+    TotalData[0][4] = "Total";
+    var PercentData = TotalData.map(function (record) {
+      record[5] = (record[4] / 30) * 100;
+      return record;
     })
     PercentData[0][5] = "Percentage";
     var Final_WB = XLSX.utils.book_new();
     var Final_WS = XLSX.utils.json_to_sheet(PercentData);
     XLSX.utils.book_append_sheet(Final_WB, Final_WS, "finalData");
-    XLSX.writeFile(Final_WB, "Final_result.xlsx");  
+    XLSX.writeFile(Final_WB, "Final_result.xlsx");
   }
 });
-
 
 function readColumnWiseData(range, ws) {
   var columnWiseData = [];
@@ -106,35 +107,84 @@ function readColumnWiseData(range, ws) {
 }
 
 
-console.log(__dirname)
+//ADDING DOWNLOADABLE FILES
 var DownloadFile1 = __dirname + "/Final_result.xlsx";
-
 app.get("/result", (req, res) => {
-   res.download(DownloadFile1);
- });
+  res.download(DownloadFile1);
+});
 
 
-
-
- var DownloadFile2 = __dirname + "/Template/Template1.xlsx";
- app.get("/template1", (req, res) => {
+var DownloadFile2 = __dirname + "/Template/Template1.xlsx";
+app.get("/template1", (req, res) => {
   res.download(DownloadFile2);
 });
 
 
-
-
 var DownloadFile3 = __dirname + "/Template/Template2.xlsx";
 app.get("/template2", (req, res) => {
- res.download(DownloadFile3);
+  res.download(DownloadFile3);
 });
-
 
 
 var DownloadFile4 = __dirname + "/Template/Template3.xlsx";
 app.get("/template3", (req, res) => {
- res.download(DownloadFile4);
+  res.download(DownloadFile4);
 });
+
+
+
+//MONGO BACKEND
+mongoose.connect("mongodb://localhost:27017/CO_Users_db",
+  { useNewUrlParser: true, useUnifiedTopology: true },
+  console.log("DataBase Connected Succesfully"))
+
+const userSchema = new mongoose.Schema({
+  name: String,
+  email: String,
+  password: String,
+})
+const User = new mongoose.model("User", userSchema)
+//Routes
+app.post("/login", (req, res) => {
+  const { email, password } = req.body;
+  User.findOne({email:email},(err,user)=>{
+    if(user){
+      if(password=== user.password){
+        res.send({msg:"Login Successful",user:user})
+      }
+      else{
+        res.send({msg:"Incorrect Password"})
+      }
+    }
+    else{
+      res.send({msg: "User not registered"})
+    }
+  })
+})
+app.post("/register", (req, res) => {
+  const { name, email, password } = req.body;
+  User.findOne({ email: email }, (err, user) => {
+    if (user) {
+      res.send({ msg: "User Already registered" })
+    }
+    else {
+      const user = new User({
+        name: name,
+        email: email,
+        password: password
+      })
+      user.save(err => {
+        if (err) {
+          res.send(err);
+        }
+        else {
+          res.send({ msg: "Successfully Registered !" })
+        }
+      })
+    }
+  })
+})
+
 
 
 app.listen(port, () => console.log(`Server Started at http://localhost:${port}`))
