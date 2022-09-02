@@ -1,0 +1,55 @@
+.home{
+    display: flex;
+}
+.home-container{
+    flex: 6;
+}
+.sub-title{
+    margin-top: 30px;
+    margin-left: 20px;
+    font-size: 30px;
+}
+.btn{
+    margin-left: 190px;
+    color: white;
+    background-color: #ff6d3e;
+    &:hover{
+        background-color: #b7370c;
+    }
+}
+.stu-card{
+    
+    border-radius: 10px;
+    background-color:#363740;
+    width: 400px;
+    height: 300px;
+    margin: 20px;
+    color: white;
+    .Add{
+        padding: 20px;
+        margin: 30px 0;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .newform{
+        padding: 20px;
+        margin: 30px 0;
+    }
+    .button{
+        padding: 20px;
+        margin: 30px 0;
+        margin-left: 110px;
+
+    }
+    
+}
+.input-btns{
+    margin: 10px;
+}
+.page-title{
+    color: #b7370c;
+}
+.pen{
+    font-size: 20px;
+    margin: 20px;
+}

@@ -1,0 +1,158 @@
+.home1 {
+    display: flex;
+}
+
+.home-container1 {
+    flex: 10;
+    background-color: #dedede;
+
+    .display {
+        display: flex;
+        justify-content: space-between;
+
+        .card {
+            box-sizing: border-box;
+            padding: 40px;
+            margin-top: 20px;
+            margin-left: 30px;
+            margin-right: 20px;
+            width: 340px;
+            height: 250px;
+            justify-content: center;
+            text-align: center;
+            font-size: larger;
+            background-color:#363741;
+            color: white;
+            border-radius: 10px;
+            .name {
+                font-weight: bold;
+                color: #ff6d3e;
+            }
+
+            .para {
+                margin-top: 33px;
+                margin-bottom: 33px;
+            }
+            
+        }
+
+        .card2 {
+            border-bottom-left-radius: 10px;
+            box-sizing: border-box;
+            padding: 40px;
+            margin-top: 20px;
+            margin-right: 0;
+            width: 500px;
+            height: 250px;
+            background-color: white;
+
+            .style {
+                font-weight: bolder;
+                color: #ff6d3e;
+            }
+            .greeting {
+                font-size: 30px;
+                margin-top: 10px;
+                margin-left: 50px;
+            }
+            .recent{
+                margin-left: 190px;
+            }
+        }
+
+        .card-3 {
+            border-bottom-right-radius: 10px;
+            border-top-right-radius: 10px;
+            box-sizing: border-box;
+            margin-top: 20px;
+            margin-right: 40px;
+            margin-left: 0;
+            width: 400px;
+            height: 250px;
+            justify-content: center;
+            text-align: center;
+            font-size: larger;
+            background-color: white;
+            .img {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                .user-img {
+                    border-bottom-left-radius: 10px;
+                    border-top-left-radius: 10px;
+                    margin-left: 0;
+                    width: 340px;
+                    height: 250px;
+                    transform: scaleX(-1);
+                }
+            }
+        }
+    }
+    .course{
+        margin: 20px;
+        .title{
+            font-size: 20px;
+            font-weight: bolder;
+        }
+        .course-card{
+            background-color: white;
+            margin: 20px;
+            border-radius: 10px;
+            padding: 20px;
+            .sub{
+                font-size: 30px;
+                font-weight: bold;
+                margin: 20px;
+            }
+            .btn{
+                margin-left: 190px;
+                color: white;
+                background-color: #ff6d3e;
+                &:hover{
+                    background-color: #b7370c;
+                }
+            }
+            .icon{
+                font-size: 30px;
+            }
+            .content{
+                margin-top: 15px;
+            }
+            .info{
+                color: #146ebf;
+                margin-left: 110px;
+                
+            }
+        }
+        .course-card-dummy{
+            
+            width:1290px;
+            height: 480px;
+            position: absolute;
+            left: 150px;
+            top: 403px;
+            background-color: rgb(254, 254, 254);
+            border-radius: 10px;
+            
+            .head{
+                font-size: 20px;
+                font-weight: bold;
+                color: #b7370c;
+                margin:  20px 0;
+            }
+            .icon{
+                font-size: 30px;
+                margin-left: 1000px;
+            }
+            .content{
+                margin-top: 15px;
+            }
+            .course-obj{
+                margin-top: 20px;
+            }
+        }
+    }
+}
+#info-btn:hover{
+    cursor: pointer;
+}

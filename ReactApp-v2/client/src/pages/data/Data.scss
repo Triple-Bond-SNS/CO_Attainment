@@ -1,0 +1,115 @@
+.tab {
+    padding: 20px;
+    margin: 20px;
+    margin-right: 30px;
+
+    .thead-dark {
+        background-color: #363740;
+        color: white;
+
+        .Check {
+            width: 10px;
+        }
+
+        .Sr {
+            width: 70px;
+        }
+
+        .Template {
+            text-align: center;
+        }
+    }
+
+    .checkbox {
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        margin: auto;
+    }
+
+    .Savebtn {
+        border-radius: 5px;
+        color: #363740;
+        border: #363740;
+        background-color: #ff6d3e;
+
+        &:hover {
+            background-color: #b7370c;
+        }
+    }
+
+    .d-btn {
+        border-radius: 5px;
+        background-color: #027bff;
+        color: white;
+        text-align: center;
+        margin-left: 25px;
+        padding: 5px;
+
+        .down-icon {
+            font-size: 20px;
+        }
+
+        &:hover {
+            background-color: #0a5db6;
+        }
+    }
+}
+
+.save-button {
+    text-align: center;
+
+    .new-button {
+        width: 200px;
+        height: 50px;
+        border: none;
+        outline: none;
+        background: #2f2f2f;
+        color: #fff;
+        font-size: 18px;
+        border-radius: 40px;
+        text-align: center;
+        box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        &:hover{
+            background-color: #000;
+            border: 2px solid #ff6d3e;
+            
+        }
+    }
+    .active{
+        transition: 1.5s;
+        width: 200px;
+        height: 50px;
+        border: none;
+        background: #ff6d3e;
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 40px;
+        box-shadow: 0 6px 20px -5px rgba(0,0,0,0.4);
+        position: relative;
+        overflow: hidden;
+        cursor:default;
+    }
+}
+.threshold-div{
+    width: 250px;
+    margin-left: 35px;
+    margin-bottom: 30px;
+    margin: 20px auto ;
+}
+.threshold{
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 5px;
+}
+.options{
+    color: #fff;
+    background-color:#2f2f2f;
+    margin: 2px solid black;
+    border-radius: 6px;
+}

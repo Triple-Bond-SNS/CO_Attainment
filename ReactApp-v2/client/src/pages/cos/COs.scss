@@ -1,0 +1,25 @@
+.co-card {
+    color: white;
+    background-color: #363740;
+    margin: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+.report{
+    border-radius: 5px;
+    margin-top: 20px;
+    color: white;
+    border: #363740;
+    background-color: #ff6d3e;
+    &:hover{
+        background-color: #b7370c;
+    }
+}
+
+.insert-data{
+    border-radius: 5px;
+    border: #363740;
+}
